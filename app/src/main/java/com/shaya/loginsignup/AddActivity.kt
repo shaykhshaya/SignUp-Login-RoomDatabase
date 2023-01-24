@@ -18,4 +18,8 @@ class AddActivity : AppCompatActivity() {
             startActivity(Intent(this, HomeScreenActivity::class.java))
         }
     }
+
+    private fun addNewFriend() {
+
+    }
 }

@@ -18,6 +18,7 @@ class HomeScreenActivity : AppCompatActivity() {
             startActivity(Intent(this,AddActivity::class.java))
         }
         binding.btnLogout.setOnClickListener {
+            Utils.setUserLoggedOut()
             startActivity(Intent(this, OnboardingActivity::class.java))
         }
     }

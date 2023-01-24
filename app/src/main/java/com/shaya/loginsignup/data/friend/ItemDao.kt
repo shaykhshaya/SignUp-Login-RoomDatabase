@@ -1,4 +1,4 @@
-package com.shaya.loginsignup.data
+package com.shaya.loginsignup.data.friend
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

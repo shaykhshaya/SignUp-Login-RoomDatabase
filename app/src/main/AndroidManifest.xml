@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginSignUp"
         tools:targetApi="31"
-        android:name=".SignUpApplication">
+        android:name=".BaseApplication">
         <activity
             android:name=".AddActivity"
             android:exported="false">

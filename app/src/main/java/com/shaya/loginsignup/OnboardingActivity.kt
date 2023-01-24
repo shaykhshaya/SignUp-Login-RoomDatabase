@@ -14,6 +14,12 @@ class OnboardingActivity : AppCompatActivity() {
         binding = ActivityOnboardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        if (Utils.isUserLoggedIn()){
+            startActivity(Intent(this, HomeScreenActivity::class.java))
+            finish()
+        }
+
+
         binding.btnLogin.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }
@@ -21,7 +27,6 @@ class OnboardingActivity : AppCompatActivity() {
         binding.btnSignUp.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
         }
-
 
 
     }

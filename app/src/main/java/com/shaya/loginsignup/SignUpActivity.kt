@@ -4,14 +4,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.shaya.loginsignup.databinding.ActivitySignUpBinding
 import com.shaya.loginsignup.viewmodels.SignUpViewModel
 import com.shaya.loginsignup.viewmodels.SignUpViewModelFactory
 
 class SignUpActivity : AppCompatActivity() {
 
-   private val viewModel: SignUpViewModel by viewModels{
-       SignUpViewModelFactory((application as SignUpApplication).registrationDatabase.itemDao())
+   private val viewModel : SignUpViewModel by viewModels{
+       SignUpViewModelFactory(BaseApplication.registrationDatabase.itemDao())
    }
     private lateinit var binding: ActivitySignUpBinding
 
