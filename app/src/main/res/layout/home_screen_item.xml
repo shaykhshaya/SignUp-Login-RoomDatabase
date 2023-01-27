@@ -31,9 +31,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="32dp"
-
-                app:tint="#8E8988" />
+                android:layout_marginTop="32dp" />
 
             <TextView
                 android:id="@+id/first_name"

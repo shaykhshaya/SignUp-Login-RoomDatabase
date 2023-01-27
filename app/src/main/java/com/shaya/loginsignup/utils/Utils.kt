@@ -1,9 +1,17 @@
-package com.shaya.loginsignup
+package com.shaya.loginsignup.utils
 
 import android.content.Context
-import android.service.autofill.UserData
+import android.net.Uri
+import android.provider.MediaStore
+import android.widget.ImageView
 import android.widget.Toast
-import com.shaya.loginsignup.data.Item
+import androidx.core.net.toUri
+import com.bumptech.glide.Glide
+import com.shaya.loginsignup.BaseApplication
+import com.shaya.loginsignup.IS_LOGGED_IN
+import com.shaya.loginsignup.LOGGED_IN_USER
+import java.io.File
+import java.net.URI
 
 object Utils {
 
@@ -50,4 +58,30 @@ object Utils {
         editor.putString(LOGGED_IN_USER, "")
         editor.commit()
     }
+
+    fun Uri.toGalleryImageFile(): File? {
+        val filePathColumn = arrayOf(MediaStore.Images.Media.DATA)
+        val cursor = BaseApplication.instance.applicationContext.contentResolver?.query(this, filePathColumn, null, null, null)
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                val columnIndex = cursor.getColumnIndex(filePathColumn[0])
+                val filePath = cursor.getString(columnIndex)
+                cursor.close()
+                return File(filePath)
+            }
+            cursor.close()
+        }
+        return null
+    }
+
+    fun ImageView.loadImageViaFile(file: File?){
+        Glide
+            .with(BaseApplication.instance.applicationContext)
+            .load(file)
+            .centerCrop()
+            .dontAnimate()
+            .into(this)
+
+    }
+
 }

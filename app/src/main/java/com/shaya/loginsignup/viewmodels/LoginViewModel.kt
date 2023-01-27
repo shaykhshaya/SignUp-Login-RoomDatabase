@@ -1,15 +1,14 @@
 package com.shaya.loginsignup.viewmodels
 
 
-import android.content.Context
 import android.content.Intent
-import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.shaya.loginsignup.*
 import com.shaya.loginsignup.data.Item
 import com.shaya.loginsignup.data.ItemDao
+import com.shaya.loginsignup.utils.Utils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
