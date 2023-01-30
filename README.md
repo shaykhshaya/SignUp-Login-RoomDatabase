@@ -1,6 +1,6 @@
 # SignUp-Login-RoomDatabase
 
-The application is based on User Authentication via Login and SignUp. A user has to first resgister through SignUp screen and then login through the given credentials.
+The application is based on User Authentication via Login and SignUp. Users have to first register through SignUp screen and then login through the given credentials.
 After login and signUp, there is a home screen for that particular user in which he can add its new friends via floating action button. The Home screen also contains a Logout button through which the User can logged himself out and a new user can login.
 
 Here, RoomDatabase is used to store the data of SignUp and new friends. Shared Preferences has also been used in order to reach onto the Home Screen directly, if a user has not logged out while closing the appliction.
